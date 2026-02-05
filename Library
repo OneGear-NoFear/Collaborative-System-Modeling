@@ -1,1 +1,51 @@
+package Main;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class Library {
+    private List<Book> books = new ArrayList<>();
+    private List<Student> members = new ArrayList<>();
+
+    public void addBook(Book book) {
+        books.add(book);
+    }
+
+    public void registerStudent(Student student) {
+        members.add(student);
+    }
+
+    public Book findBook(int bookID) {
+        for (Book b : books) {
+            if (b.getBookID() == bookID) {
+                return b;
+            }
+        }
+        return null;
+    }
+
+    public Student findStudent(int studentID) {
+        for (Student s : members) {
+            if (s.getStudentID() == studentID) {
+                return s;
+            }
+        }
+        return null;
+    }
+
+    public void issueBook(Student student, Book book) {
+        if (book != null && book.isAvailable()) {
+            student.borrowBook(book);
+            System.out.println("Book issued successfully.");
+        } else {
+            System.out.println("Book not available.");
+        }
+    }
+
+    public void returnBook(Student student, Book book) {
+        if (book != null) {
+            student.returnBook(book);
+            System.out.println("Book returned successfully.");
+        }
+    }
+}
