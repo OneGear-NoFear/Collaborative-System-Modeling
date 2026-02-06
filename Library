@@ -1,4 +1,4 @@
-package com.mycompany.library;
+package Main;
 
 import java.util.ArrayList;
 
@@ -6,41 +6,6 @@ public class Library {
 
     private ArrayList<Book> books = new ArrayList<>();
     private ArrayList<Student> students = new ArrayList<>();
-
-    public static void main(String[] args) {
-
-        Library library = new Library();
-
-        // Situation 1: Add books
-        Book b1 = new Book(101, "Java Programming", "James Gosling");
-        Book b2 = new Book(102, "Data Structures", "Mark Weiss");
-
-        library.addBook(b1);
-        library.addBook(b2);
-
-        // Situation 2: Register students
-        Student s1 = new Student(1, "Alice");
-        Student s2 = new Student(2, "Bob");
-
-        library.registerStudent(s1);
-        library.registerStudent(s2);
-
-        // Situation 3: Issue book
-        System.out.println("\nIssuing book to Alice");
-        library.issueBook(s1, b1);
-
-        // Situation 4: Try issuing same book again
-        System.out.println("\nTrying to issue same book to Bob");
-        library.issueBook(s2, b1);
-
-        // Situation 5: Return book
-        System.out.println("\nReturning book from Alice");
-        library.returnBook(s1, b1);
-
-        // Situation 6: Issue again
-        System.out.println("\nIssuing book to Bob");
-        library.issueBook(s2, b1);
-    }
 
     public void addBook(Book book) {
         books.add(book);
@@ -66,4 +31,3 @@ public class Library {
         System.out.println("Book returned successfully.");
     }
 }
-
