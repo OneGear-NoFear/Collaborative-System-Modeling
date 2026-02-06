@@ -1,4 +1,4 @@
-package com.mycompany.library;
+package Main;
 
 public class Book {
 
@@ -30,4 +30,3 @@ public class Book {
         available = true;
     }
 }
-
