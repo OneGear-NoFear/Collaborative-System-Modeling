@@ -1,20 +1,17 @@
-package Main;
+package com.mycompany.library;
 
 public class Book {
+
     private int bookID;
     private String title;
     private String author;
-    private boolean isAvailable;
+    private boolean available;
 
     public Book(int bookID, String title, String author) {
         this.bookID = bookID;
         this.title = title;
         this.author = author;
-        this.isAvailable = true;
-    }
-
-    public int getBookID() {
-        return bookID;
+        this.available = true;
     }
 
     public String getTitle() {
@@ -22,15 +19,15 @@ public class Book {
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+        return available;
     }
 
     public void borrowBook() {
-        isAvailable = false;
+        available = false;
     }
 
     public void returnBook() {
-        isAvailable = true;
+        available = true;
     }
 }
 
